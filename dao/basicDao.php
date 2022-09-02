@@ -118,7 +118,7 @@ abstract class GenericDao {
 		$fields = $this->getFields();
 		$properties = [];
 		foreach ($fields as $field) {
-			$properties[$field->getName()] = $row[$field->getName()];
+			$properties[] = $row[$field];
 		}
 		return $this->reflection->newInstanceArgs($properties);
 	}
